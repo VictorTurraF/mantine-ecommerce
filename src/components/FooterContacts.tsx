@@ -3,18 +3,11 @@ import FooterSection from "./FooterSection";
 import { Anchor, BoxProps, Title } from "@mantine/core";
 import List, { ListItem } from "./List";
 import { IconAt, IconBrandWhatsapp, IconPhone } from "@tabler/icons-react";
-import Image from "next/image";
-import Logo from "@/assets/logo.svg";
 
 function FooterContacts() {
   return (
     <FooterSection>
-      <Image
-        src={Logo}
-        alt="logo"
-        width={110}
-        height={30}
-      />
+      
       <Title order={4}>Atendimento</Title>
       <List>
         <ContactListItem>

@@ -1,14 +1,19 @@
 .p--container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 calc((100vw - 1200px)/2);
 }
 
-.m--container {
-  margin: 0 1rem;
-  max-width: calc(1200px - 2rem);
+header.p--container {
+  padding: 0 calc((100vw - 1200px - 1rem)/2);
+}
+
+@media (max-width: calc(1200px + 3rem)) {
+  .p--container {
+    padding: 0 1.5rem;
+  }
+
+  header.p--container {
+    padding: 0 1rem;
+  }
 }
 
 ul.unstyled {

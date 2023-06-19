@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Footer as MFooter, Text } from "@mantine/core";
+import { Footer as MFooter, Text } from "@mantine/core";
 import Image from "next/image";
 
 import AuthorLogo from "@/assets/author-logo.svg";
@@ -9,25 +9,29 @@ import FooterContacts from "./FooterContacts";
 import FooterInstitutionals from "./FooterInstitutionals";
 import FooterSocialLinks from "./FooterSocialLinks";
 import FooterTimes from "./FooterTimes";
+import styled from "@emotion/styled";
+import Logo from "./Logo";
+
+const FooterGrid = styled.div`
+  display: grid;
+  gap: 1.5rem;
+  
+  @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
 
 function Footer() {
   return (
     <MFooter height="auto" pt="md">
-      <Box
-        className="p--container"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "stretch",
-          gap: "1.5rem",
-        }}
-      >
+      <Logo />
+      <FooterGrid className="p--container">
         <FooterContacts />
         <FooterTimes />
         <FooterSocialLinks />
         <FooterInstitutionals />
         <FooterPayments />
-      </Box>
+      </FooterGrid>
       <Text
         sx={(theme) => ({
           background: theme.colors.purple[6],
